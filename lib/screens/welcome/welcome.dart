@@ -1,3 +1,5 @@
+import 'package:flutter_firebaseauth/screens/welcome/sign_in.dart';
+import 'package:flutter_firebaseauth/screens/welcome/sign_up.dart';
 import 'package:flutter_firebaseauth/shared/styled_text.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +28,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               StyledHeading('Welcome.'),
 
               // sign up screen
-
+              SignUp(),
               // sign in screen
+              SignIn(),
             ],
           ),
         ),

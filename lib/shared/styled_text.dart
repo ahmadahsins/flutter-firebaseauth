@@ -8,9 +8,9 @@ class StyledBodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: GoogleFonts.poppins(
-        textStyle: TextStyle(color: Colors.grey[800]),
-      )
+    return Text(
+      text,
+      style: GoogleFonts.poppins(textStyle: TextStyle(color: Colors.grey[800])),
     );
   }
 }
@@ -22,9 +22,11 @@ class StyledHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: GoogleFonts.poppins(
+    return Text(
+      text,
+      style: GoogleFonts.poppins(
         textStyle: TextStyle(color: Colors.blue[500], fontSize: 32),
-      )
+      ),
     );
   }
 }
@@ -36,9 +38,15 @@ class StyledAppBarText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: GoogleFonts.poppins(
-        textStyle: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-      )
+    return Text(
+      text,
+      style: GoogleFonts.poppins(
+        textStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
@@ -50,9 +58,9 @@ class StyledErrorText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: GoogleFonts.poppins(
-        textStyle: const TextStyle(color: Colors.red),
-      )
+    return Text(
+      text,
+      style: GoogleFonts.poppins(textStyle: const TextStyle(color: Colors.red)),
     );
   }
 }
