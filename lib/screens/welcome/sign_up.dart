@@ -33,6 +33,12 @@ class _SignUpState extends State<SignUp> {
               controller: _emailController,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(labelText: 'Email'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
             ),
 
             // password
@@ -40,13 +46,30 @@ class _SignUpState extends State<SignUp> {
               controller: _passwordController,
               obscureText: true,
               decoration: const InputDecoration(labelText: 'Password'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password';
+                }
+                if (value.length < 8) {
+                  return 'Password must be at least 8 chars long';
+                }
+                return null;
+              },
             ),
 
             // error feedback
 
             // submit button
             StyledButton(
-              onPressed: () async {},
+              onPressed: () async {
+                if (_formKey.currentState!.validate()) {
+                  final email = _emailController;
+                  final password = _passwordController;
+
+                  print(email);
+                  print(password);
+                }
+              },
               child: StyledButtonText('Sign Up'),
             ),
           ],
