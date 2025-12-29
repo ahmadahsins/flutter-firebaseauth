@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebaseauth/screens/models/app_user.dart';
 import 'package:flutter_firebaseauth/screens/services/auth_service.dart';
 import 'package:flutter_firebaseauth/shared/styled_button.dart';
 import 'package:flutter_firebaseauth/shared/styled_text.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key, required this.user});
+
+  final AppUser user;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,10 @@ class ProfileScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const StyledHeading('Profile'),
+            const SizedBox(height: 16),
+
+            // output user email here later#
+            StyledBodyText('Welcome to your profile, ${user.email}'),
             const SizedBox(height: 16),
 
             StyledButton(
