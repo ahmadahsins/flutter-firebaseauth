@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebaseauth/screens/services/auth_service.dart';
 import 'package:flutter_firebaseauth/shared/styled_text.dart';
 import 'package:flutter_firebaseauth/shared/styled_button.dart';
 
@@ -60,11 +61,10 @@ class _SignInState extends State<SignIn> {
             StyledButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
-                  final email = _emailController;
-                  final password = _passwordController;
+                  final email = _emailController.text.trim();
+                  final password = _passwordController.text.trim();
 
-                  print(email);
-                  print(password);
+                  final user = await AuthService.signIn(email, password);
                 }
               },
               child: StyledButtonText('Sign In'),
